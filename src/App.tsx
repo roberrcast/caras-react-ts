@@ -1,7 +1,20 @@
 import React from "react";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./styles/theme";
+import { GlobalStyles } from "./styles/GlobalStyles";
+
+import Header from "./components/Header";
+import logo from "./assets/Logo-1.png";
 
 function App() {
-    return <div className="App"></div>;
+    return (
+        <ThemeProvider theme={theme}>
+            <GlobalStyles />
+            <div className="App">
+                <Header logoSrc={logo} />
+            </div>
+        </ThemeProvider>
+    );
 }
 
 export default App;

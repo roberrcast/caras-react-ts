@@ -1,11 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import { ThemeType } from "./theme";
 
-interface GlobalStyleProps {
-    theme: ThemeType;
-}
-
-export const GlobalStyles = createGlobalStyle<GlobalStyleProps>`
+export const GlobalStyles = createGlobalStyle`
 
 /* Estilos para resetear */
 *, *::before, *::after {
