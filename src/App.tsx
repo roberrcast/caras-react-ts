@@ -5,6 +5,7 @@ import { GlobalStyles } from "./styles/GlobalStyles";
 
 import Header from "./components/Header";
 import logo from "./assets/Logo-1.png";
+import SubscriptionForm from "./components/SubscriptionForm";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <GlobalStyles />
             <div className="App">
                 <Header logoSrc={logo} />
+                <SubscriptionForm />
             </div>
         </ThemeProvider>
     );

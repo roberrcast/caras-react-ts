@@ -4,8 +4,7 @@ import { fullWidth, flexCenter, flexColumnCenter } from "../../styles/mixins";
 export const HeaderWrapper = styled.header`
     ${flexColumnCenter};
     justify-content: center;
-    width: 100%;
-    box-sizing: border-box;
+    ${fullWidth};
     padding: 1.75rem;
 
     @media (max-width: 29.688em) {
@@ -13,7 +12,6 @@ export const HeaderWrapper = styled.header`
     }
 `;
 
-// NEW: Corresponds to .header__logo-link (the <section> wrapper)
 export const LogoWrapper = styled.section`
     width: 230px;
 
@@ -28,28 +26,27 @@ export const LogoWrapper = styled.section`
     }
 `;
 
-// UPDATED: Corresponds to .header__home (the <a> tag)
+//Antes header__home (the <a> tag)
 export const LogoLink = styled.a`
     ${flexCenter}; /* This is the ONLY style it should have from the layout */
 `;
 
-// This corresponds to .header__logo
+// Antes .header__logo
 export const Logo = styled.img`
     width: 100%;
 `;
 
-// This corresponds to .header__menu
+// Antes header__menu
 export const Menu = styled.section`
     width: 100%;
     margin-top: 1em;
 `;
 
-// This corresponds to .header__nav
+// Antes .header__nav
 export const Nav = styled.nav`
     ${flexCenter};
     flex-wrap: wrap;
 
-    /* Styles for .header__link from _components.scss are applied here */
     a {
         text-decoration: none;
         color: ${({ theme }) => theme.colors.textMain};
@@ -75,7 +72,7 @@ export const Nav = styled.nav`
         }
     }
 
-    /* Grid layout from .header__nav */
+    /* Grid layout para .header__nav */
     @media (max-width: 46.875em) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -84,7 +81,7 @@ export const Nav = styled.nav`
     }
 `;
 
-// This corresponds to .header__social-media
+// Anstes .header__social-media
 export const SocialMedia = styled.section`
     display: flex;
     justify-content: center;
@@ -92,7 +89,7 @@ export const SocialMedia = styled.section`
     margin-top: 1rem;
 `;
 
-// This corresponds to .header__link-icon
+// Antes .header__link-icon
 export const IconLink = styled.a`
     color: ${({ theme }) => theme.colors.textSub};
 

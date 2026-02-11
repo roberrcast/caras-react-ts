@@ -23,7 +23,7 @@ export const theme = {
 
     fonts: {
         barlowLight: "'Barlow-light', Arial, Helvetica, sans-serif",
-        barlowBold: "'Barolw-bold', Arial, Helvetica, sans-serif",
+        barlowBold: "'Barlow-bold', Arial, Helvetica, sans-serif",
         playfair: "'Playfair', serif, Arial",
     },
 
