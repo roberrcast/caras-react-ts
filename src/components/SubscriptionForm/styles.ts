@@ -20,7 +20,7 @@ export const NewsletterWrapper = styled.section`
     position: relative;
     ${fullWidth};
     ${flexColumnCenter};
-    padding: 2em;
+    padding: 1em;
     background-color: ${({ theme }) => theme.colors.bgSecondary};
 
     @media (max-width: 50.625em) {
@@ -49,7 +49,7 @@ export const Subtitle = styled.p`
     font-family: ${({ theme }) => theme.fonts.playfair};
     ${txtSizeWeight("1.5rem")};
     color: ${({ theme }) => theme.colors.primary};
-    padding: 1rem;
+    padding: 0.5rem;
 
     @media (max-width: 79em) {
         font-size: 1.35rem;
@@ -69,7 +69,7 @@ export const Subtitle = styled.p`
     }
 `;
 
-//Antes .newsletter__form
+// .newsletter__form
 export const Form = styled.form`
     ${flexColumnCenter};
     font-family: ${({ theme }) => theme.fonts.barlowBold};
@@ -114,7 +114,7 @@ export const Input = styled.input`
     border: none;
     border-radius: 4px;
     background-color: ${({ theme }) => theme.colors.footerBg};
-    padding: 0.5rem;
+    padding: 0.3rem;
 
     @media (max-width: 46.875rem) {
         font-size: 0.75rem;
