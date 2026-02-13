@@ -1,11 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import { ThemeType } from "./theme";
 
-interface GlobalStyleProps {
-    theme: ThemeType;
-}
-
-export const GlobalStyles = createGlobalStyle<GlobalStyleProps>`
+export const GlobalStyles = createGlobalStyle`
 
 /* Estilos para resetear */
 *, *::before, *::after {
@@ -17,19 +12,19 @@ box-sizing: border-box;
 /* Fuentes */
 @font-face {
     font-family: 'Barlow-light';
-    src: url('../../public/fonts/Barlow-light.ttf') format('truetype');
+    src: url('/fonts/Barlow-light.ttf') format('truetype');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Barlow-bold';
-    src: url('../../public/fonts/Barlow-bold.ttf') format('truetype');
+    src: url('/fonts/Barlow-bold.ttf') format('truetype');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Playfair';
-    src: url('../../public/fonts/Playfair-display-Regular.ttf') format('truetype');
+    src: url('/fonts/Playfair-display-Regular.ttf') format('truetype');
     font-display: swap;
 }
 
