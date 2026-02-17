@@ -29,7 +29,7 @@ box-sizing: border-box;
 }
 
 body {
-    font-family: ${(props) => props.theme.fonts.barlowLight};
+    font-family: ${(props) => props.theme.fonts.playfair};
     color: ${(props) => props.theme.colors.textMain};
     background-color: ${(props) => props.theme.colors.bgWhite};
 }

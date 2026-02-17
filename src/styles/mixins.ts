@@ -1,4 +1,5 @@
 import { css } from "styled-components";
+type ThemeColor = "textSub" | "footerBg";
 
 interface ParsedUnit {
     val: number;
@@ -180,4 +181,50 @@ export const newsletterAlertShow = css`
     opacity: 1;
     transform: translateY(0);
     visibility: visible;
+`;
+
+// Estilos para el contenido de las columnas
+export const columnLayout = (
+    display: string,
+    flexDirection: string,
+    alignItems: string,
+    justifyContent: string,
+) => css`
+    display: ${display};
+    flex-direction: ${flexDirection};
+    align-items: ${alignItems};
+    justify-content: ${justifyContent};
+`;
+
+// Estilos para iconos
+export const baseIcon = (
+    minSize: string,
+    maxSize: string,
+    minBreakpoint: string,
+    maxBreakpoint: string,
+    fillColor: ThemeColor,
+    hoverColor: ThemeColor,
+) => css`
+    width: ${fluid(minSize, maxSize, minBreakpoint, maxBreakpoint)};
+    height: ${fluid(minSize, maxSize, minBreakpoint, maxBreakpoint)};
+    fill: ${({ theme }) => theme.colors[fillColor]};
+
+    @media (hover: hover) {
+        &:hover {
+            cursor: pointer;
+            fill: ${({ theme }) => theme.colors[hoverColor]};
+        }
+    }
+`;
+
+// height & width mixin
+export const heightWidth = (height: string, width: string) => css`
+    height: ${height};
+    width: ${width};
+`;
+
+// Estilo base botón
+export const baseButton = (background: string, border: string) => css`
+    background: ${background};
+    border: ${border};
 `;

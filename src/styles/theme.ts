@@ -7,6 +7,7 @@ export const theme = {
         bgSecondary: "#f3f3f3",
         bgWhite: "#fff",
         bgOther: "#eeece7",
+        videoOverlayBg: "rgba(0, 0, 0, .3)",
         footerText: "#666",
         linkHover: "#242424",
         border: "#e3e3e3",

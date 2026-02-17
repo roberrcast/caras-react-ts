@@ -1,11 +1,106 @@
 import styled from "styled-components";
-import { fluid } from "../../styles/mixins";
+import {
+    fluid,
+    baseIcon,
+    columnLayout,
+    heightWidth,
+    baseButton,
+} from "../../styles/mixins";
+import { ReactComponent as PlayIcon } from "../../assets/playIcon.svg";
+import { ReactComponent as PauseIcon } from "../../assets/pauseIcon.svg";
 
-// .highlights
-export const ShowcaseWrapper = styled.section``;
-
-// NEW video container
-export const VideoContainer = styled.video``;
+// NEW main feature section container
+export const FeaturedSectionContainer = styled.section``;
 
 // .highlights__title
-export const Title = styled.h2``;
+export const Title = styled.h2`
+    text-align: center;
+    margin: 4rem 0;
+`;
+
+// .highlights
+export const FeaturedSectionInner = styled.div`
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: ${({ theme }) => theme.colors.textMain};
+`;
+
+// NEW video container
+export const BackgroundVideo = styled.video`
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2;
+    object-fit: cover;
+    object-position: top;
+`;
+
+// .highlights__txt-container
+export const VideoOverlay = styled.div`
+    position: absolute;
+    gap: 1rem;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: ${({ theme }) => theme.colors.videoOverlayBg};
+    z-index: 1;
+`;
+
+export const Content = styled.div`
+    ${heightWidth("100%", "100%")};
+    display: flex;
+    justify-content: space-between;
+`;
+
+export const ColumnRight = styled.div`
+    ${heightWidth("100%", "50%")};
+    ${columnLayout("flex", "column", "start", "end")}
+`;
+
+export const ColumnLeft = styled.div`
+    ${heightWidth("100%", "50%")};
+    ${columnLayout("flex", "column", "end", "center")}
+`;
+
+export const ColumnLeftInner = styled.div``;
+
+// .hightlights__txt
+export const Text = styled.p`
+    text-align: justify;
+    font-size: ${fluid(".9rem", "1.5rem", "375px", "1800px")};
+    //padding: 1.5rem;
+    padding: ${fluid(".8rem", "1.5rem", "375px", "1800px")};
+    z-index: 1;
+    color: ${({ theme }) => theme.colors.bgSecondary};
+
+    span {
+        font-weight: 700;
+        color: ${({ theme }) => theme.colors.primary};
+    }
+`;
+
+// Botón de reproducción
+export const Button = styled.button`
+    ${baseButton("transparent", "none")}
+    margin: 1rem 1.5rem;
+`;
+
+// --- Iconos ---
+export const Pause = styled(PauseIcon)`
+    ${baseIcon("16px", "24px", "375px", "1800px", "footerBg", "textSub")}
+`;
+
+export const Play = styled(PlayIcon)`
+    ${baseIcon("16px", "24px", "375px", "1800px", "footerBg", "textSub")}
+`;
