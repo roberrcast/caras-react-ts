@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import {
     fluid,
-    baseIcon,
     columnLayout,
     heightWidth,
     baseButton,
+    iconStyle,
 } from "../../styles/mixins";
 import { ReactComponent as PlayIcon } from "../../assets/playIcon.svg";
 import { ReactComponent as PauseIcon } from "../../assets/pauseIcon.svg";
@@ -70,7 +70,7 @@ export const ColumnRight = styled.div`
 
 export const ColumnLeft = styled.div`
     ${heightWidth("100%", "50%")};
-    ${columnLayout("flex", "column", "end", "center")}
+    ${columnLayout("flex", "column", "center", "center")}
 `;
 
 export const ColumnLeftInner = styled.div``;
@@ -94,13 +94,16 @@ export const Text = styled.p`
 export const Button = styled.button`
     ${baseButton("transparent", "none")}
     margin: 1rem 1.5rem;
+    position: relative;
+    width: ${fluid("16px", "24px", "375px", "1800px")};
+    height: ${fluid("16px", "24px", "375px", "1800px")};
 `;
 
 // --- Iconos ---
 export const Pause = styled(PauseIcon)`
-    ${baseIcon("16px", "24px", "375px", "1800px", "footerBg", "textSub")}
+    ${iconStyle}
 `;
 
 export const Play = styled(PlayIcon)`
-    ${baseIcon("16px", "24px", "375px", "1800px", "footerBg", "textSub")}
+    ${iconStyle}
 `;

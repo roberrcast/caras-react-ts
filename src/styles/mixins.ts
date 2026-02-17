@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-type ThemeColor = "textSub" | "footerBg";
+type ThemeColor = "primary" | "bgSecondary";
 
 interface ParsedUnit {
     val: number;
@@ -207,6 +207,7 @@ export const baseIcon = (
 ) => css`
     width: ${fluid(minSize, maxSize, minBreakpoint, maxBreakpoint)};
     height: ${fluid(minSize, maxSize, minBreakpoint, maxBreakpoint)};
+
     fill: ${({ theme }) => theme.colors[fillColor]};
 
     @media (hover: hover) {
@@ -215,6 +216,15 @@ export const baseIcon = (
             fill: ${({ theme }) => theme.colors[hoverColor]};
         }
     }
+`;
+
+// Estilo para iconos Pause/Play
+export const iconStyle = css`
+    ${baseIcon("16px", "24px", "375px", "1800px", "bgSecondary", "primary")}
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease-in-out;
 `;
 
 // height & width mixin
