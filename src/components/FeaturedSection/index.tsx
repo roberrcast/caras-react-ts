@@ -14,11 +14,18 @@ import {
     Pause,
     Play,
 } from "./styles";
+
+// Hook video player
+import { useVideoPlayer } from "../../hooks/useVideoPlayer";
+
 // Videos
 import heroVideo from "../../assets/fancy_hairstyle_optimized.mp4";
 import heroVideoWebm from "../../assets/fancy_hairstyle.webm";
 
 const FeaturedSection = () => {
+    // Hook para el video player
+    const { isPlaying, videoRef, togglePlay } = useVideoPlayer();
+
     const featuredData = [
         { span: "Entérate", text: "de lo último de la moda" },
         { span: "Descubre", text: "culturas y arte" },
@@ -31,7 +38,7 @@ const FeaturedSection = () => {
             <Title>Nuestros suscriptores disfrutan de mucho más...</Title>
 
             <FeaturedSectionInner>
-                <BackgroundVideo autoPlay muted loop playsInline>
+                <BackgroundVideo ref={videoRef} autoPlay muted loop playsInline>
                     <source src={heroVideo} type="video/mp4" />
                     <source src={heroVideoWebm} type="video/webm" />
                     Su navegador es incompatible con la etiqueta de video.
@@ -40,8 +47,24 @@ const FeaturedSection = () => {
                 <VideoOverlay>
                     <Content>
                         <ColumnRight>
-                            <Button>
-                                <Pause></Pause>
+                            <Button onClick={togglePlay}>
+                                <Pause
+                                    style={{
+                                        opacity: isPlaying ? 1 : 0,
+                                        pointerEvents: isPlaying
+                                            ? "auto"
+                                            : "none",
+                                    }}
+                                />
+
+                                <Play
+                                    style={{
+                                        opacity: isPlaying ? 0 : 1,
+                                        pointerEvents: isPlaying
+                                            ? "none"
+                                            : "auto",
+                                    }}
+                                />
                             </Button>
                         </ColumnRight>
 
