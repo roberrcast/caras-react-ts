@@ -56,9 +56,9 @@ const CommentSection = () => {
 
     return (
         <Comments>
+            <Title>Nuestros suscriptores dicen:</Title>
             <CommentsContainer>
                 <CommentsContainerInner>
-                    <Title>Nuestros suscriptores dicen:</Title>
                     {users.map((user, id) => (
                         <CommentsCard key={id}>
                             <Image

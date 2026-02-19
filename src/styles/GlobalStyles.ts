@@ -32,6 +32,7 @@ body {
     font-family: ${(props) => props.theme.fonts.playfair};
     color: ${(props) => props.theme.colors.textMain};
     background-color: ${(props) => props.theme.colors.bgWhite};
+    box-sizing: border-box;
 }
 
 a {
