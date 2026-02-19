@@ -130,15 +130,19 @@ export const prompt = (
     border-radius: ${radius};
 `;
 
-export const promptPosition = (left: string) => css`
-    position: absolute;
-    left: ${left};
+export const inputPromptPosition = css`
+    /* left: 100%; */
+    left: calc(100% + 10px);
+    top: 50%;
+    /* transform: translate(10px, -50%); */
+
+    white-space: nowrap;
 `;
 
 //Mixins de animación/Prompts
 export const promptAnimation = css`
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translate(-20px, -50%);
     transition:
         opacity 0.3s ease-in-out,
         transform 0.3s ease-in-out,
@@ -148,7 +152,7 @@ export const promptAnimation = css`
 
 export const promptActive = css`
     opacity: 1;
-    transform: translateX(0);
+    transform: translate(0, -50%);
     visibility: visible;
 `;
 
@@ -237,4 +241,17 @@ export const heightWidth = (height: string, width: string) => css`
 export const baseButton = (background: string, border: string) => css`
     background: ${background};
     border: ${border};
+`;
+
+// Mixin para grid
+export const grid = (columnValue: string, gap: string) => css`
+    display: grid;
+    grid-template-columns: ${columnValue};
+    gap: ${gap};
+`;
+
+// Mixin para width y height para user images
+export const imgWidthHeight = (width: string, height: string) => css`
+    width: ${width};
+    height: ${height};
 `;

@@ -1,6 +1,7 @@
 export const theme = {
     colors: {
         primary: "#ed1e1e",
+        primaryGlow: "rgba(237, 30, 30, 0.6)",
         textMain: "#404040",
         textSub: "#999999",
         footerBg: "#fbfbfb",

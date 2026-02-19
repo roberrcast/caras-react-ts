@@ -7,7 +7,7 @@ import {
     txtSizeWeight,
     hover,
     prompt,
-    promptPosition,
+    inputPromptPosition,
     promptAnimation,
     promptActive,
     newsletterAlertPrompt,
@@ -89,6 +89,7 @@ export const InputGroup = styled.div`
     display: flex;
     align-items: center;
     gap: 3px;
+    position: relative;
 `;
 
 // .newsletter__label
@@ -115,6 +116,13 @@ export const Input = styled.input`
     border-radius: 4px;
     background-color: ${({ theme }) => theme.colors.footerBg};
     padding: 0.3rem;
+    transition: box-shadow 0.2s ease-in-out;
+
+    &:focus {
+        outline: none;
+        border: none;
+        box-shadow: 0 0 8px 3px ${({ theme }) => theme.colors.primaryGlow};
+    }
 
     @media (max-width: 46.875rem) {
         font-size: 0.75rem;
@@ -161,7 +169,7 @@ export const NamePrompt = styled(PromptBase)`
             "4px",
             "8px",
         )}
-    ${promptPosition(fluid("250px", "1010px", "400px", "1800px"))};
+    ${inputPromptPosition};
     font-size: ${fluid("10.4px", "18px", "400px", "1800px")};
 `;
 
@@ -180,7 +188,7 @@ export const EmailPrompt = styled(PromptBase)<{
             "4px",
             "8px",
         )}
-    ${promptPosition(fluid("313px", "1060px", "400px", "1800px"))};
+    ${inputPromptPosition};
     font-size: ${fluid("10.4px", "18px", "400px", "1800px")};
 `;
 
@@ -193,8 +201,8 @@ export const SubmitPrompt = styled(PromptBase)`
             "4px",
             "8px",
         )}
-    ${promptPosition("968px")};
-    /* Añade el resto de los media queries si es necesario */
+    ${inputPromptPosition};
+    font-size: ${fluid("10.4px", "18px", "400px", "1800px")};
 `;
 
 // .newsletter__alert
