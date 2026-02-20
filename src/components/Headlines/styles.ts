@@ -3,6 +3,8 @@ import { fluid } from "../../styles/mixins";
 
 export const HeadlinesContainer = styled.section``;
 
+export const HeadlinesContainerInner = styled.div``;
+
 export const HeadlinesCard = styled.article``;
 
 export const HeadlinesImageLink = styled.a``;
@@ -14,6 +16,8 @@ export const Content = styled.div``;
 export const SectionLink = styled.a``;
 
 export const Title = styled.h4``;
+
+export const HeadlineText = styled.a``;
 
 export const Footer = styled.footer``;
 
