@@ -255,3 +255,10 @@ export const imgWidthHeight = (width: string, height: string) => css`
     width: ${width};
     height: ${height};
 `;
+
+export const border = (
+    position: "top" | "bottom" | "left" = "bottom",
+    value: string,
+) => css`
+border-${position}: 1px solid ${value};
+`;

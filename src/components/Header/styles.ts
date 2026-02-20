@@ -28,7 +28,7 @@ export const LogoWrapper = styled.section`
 
 //Antes header__home (the <a> tag)
 export const LogoLink = styled.a`
-    ${flexCenter}; /* This is the ONLY style it should have from the layout */
+    ${flexCenter};
 `;
 
 // Antes .header__logo
