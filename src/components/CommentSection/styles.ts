@@ -21,13 +21,13 @@ export const Title = styled.h3`
 export const CommentsContainer = styled.section`
     width: 100%;
     display: flex;
-    padding: 0 7rem;
+    padding: 0 ${fluid("1rem", "8rem", "400px", "1800px")};
 `;
 
 // .comments__flex
 export const CommentsContainerInner = styled.div`
     width: 100%;
-    ${grid("repeat(auto-fit, minmax(min(100%, 220px), 300px))", "3rem")};
+    ${grid("repeat(auto-fit, minmax(min(100%, 220px), 1fr))", "3rem")};
     justify-content: space-between;
     padding-bottom: 4rem;
     ${({ theme }) => border("bottom", theme.colors.border)};

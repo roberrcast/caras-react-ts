@@ -262,3 +262,18 @@ export const border = (
 ) => css`
 border-${position}: 1px solid ${value};
 `;
+
+// Mixin para el padding responsivo de los headlines @700px
+export const paddingStyle = css`
+    padding: ${fluid("4rem", "4rem", "400px", "1800px")}
+        ${fluid("1rem", "8rem", "400px", "1800px")}
+        ${fluid("1rem", "4.75rem", "400px", "1800px")};
+`;
+
+// Mixin para el footer de los headlines
+export const footerStyle = css`
+    font-family: ${({ theme }) => theme.fonts.barlowLight};
+    color: ${({ theme }) => theme.colors.textSub};
+    font-size: ${fluid("0.75rem", "0.9rem", "400px", "1800px")};
+    text-transform: uppercase;
+`;
