@@ -5,6 +5,7 @@ import {
     grid,
     footerStyle,
     paddingStyle,
+    layoutBreakpoint,
 } from "../../styles/mixins";
 
 export const HeadlinesContainer = styled.section`
@@ -13,17 +14,7 @@ export const HeadlinesContainer = styled.section`
 `;
 
 export const HeadlinesContainerInner = styled.div`
-    ${grid("repeat(auto-fit, minmax(min(100%, 220px), 1fr))", "3rem")};
-
-    @media (max-width: 1500px) {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-    }
-
-    @media (max-width: 700px) {
-        display: flex;
-        flex-direction: column;
-    }
+    ${layoutBreakpoint};
 `;
 
 export const HeadlinesCard = styled.article``;
