@@ -41,7 +41,7 @@ export const newsData: HeadlinesData[] = [
         id: 3,
         section: "entretenimiento",
         headline:
-            "Bruno Mars habría contraido una deuda de 150 millones de dólares con el casino MGM tras asumir que los cócteles eran gratuitos",
+            "Bruno Mars habría contraido una deuda de $50 millones de dólares con el casino MGM tras asumir que los cócteles eran gratuitos",
         date: "enero 16, 2025",
         datetime: "2025-01-16",
         author: "fito hernández",
