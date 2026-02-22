@@ -6,6 +6,7 @@ import {
     grid,
     flexColumnCenter,
     border,
+    layoutBreakpoint,
 } from "../../styles/mixins";
 
 export const Comments = styled.section`
@@ -27,8 +28,7 @@ export const CommentsContainer = styled.section`
 // .comments__flex
 export const CommentsContainerInner = styled.div`
     width: 100%;
-    ${grid("repeat(auto-fit, minmax(min(100%, 220px), 1fr))", "3rem")};
-    justify-content: space-between;
+    ${layoutBreakpoint};
     padding-bottom: 4rem;
     ${({ theme }) => border("bottom", theme.colors.border)};
 `;

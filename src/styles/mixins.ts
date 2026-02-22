@@ -263,6 +263,21 @@ export const border = (
 border-${position}: 1px solid ${value};
 `;
 
+// Mixin para el layout y media queries del comment y headlines container
+export const layoutBreakpoint = css`
+    ${grid("repeat(auto-fit, minmax(min(100%, 220px), 1fr))", "3rem")};
+
+    @media (max-width: 1500px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    @media (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+    }
+`;
+
 // Mixin para el padding responsivo de los headlines @700px
 export const paddingStyle = css`
     padding: ${fluid("4rem", "4rem", "400px", "1800px")}
