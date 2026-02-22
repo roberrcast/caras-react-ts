@@ -2,13 +2,13 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
 import { GlobalStyles } from "./styles/GlobalStyles";
-
 import Header from "./components/Header";
 import logo from "./assets/Logo-1.png";
 import SubscriptionForm from "./components/SubscriptionForm";
 import FeaturedSection from "./components/FeaturedSection";
 import CommentSection from "./components/CommentSection";
 import Headlines from "./components/Headlines";
+import Footer from "./components/Footer";
 
 function App() {
     return (
@@ -20,6 +20,7 @@ function App() {
                 <FeaturedSection />
                 <CommentSection />
                 <Headlines />
+                <Footer />
             </div>
         </ThemeProvider>
     );

@@ -14,6 +14,7 @@ export const FeaturedSectionContainer = styled.section``;
 
 // .highlights__title
 export const Title = styled.h2`
+    font-size: ${fluid("1.3rem", "1.8rem", "400px", "1800px")};
     text-align: center;
     margin: 4rem 0;
 `;

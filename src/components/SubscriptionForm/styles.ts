@@ -80,7 +80,6 @@ export const Form = styled.form`
 
     @media (max-width: 25em) {
         margin: 0.5rem;
-        align-items: start;
     }
 `;
 
