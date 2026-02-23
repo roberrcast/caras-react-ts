@@ -2,7 +2,6 @@ import styled from "styled-components";
 import {
     fluid,
     fullWidth,
-    grid,
     footerStyle,
     paddingStyle,
     layoutBreakpoint,
