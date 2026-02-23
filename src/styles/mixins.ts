@@ -292,3 +292,9 @@ export const footerStyle = css`
     font-size: ${fluid("0.75rem", "0.9rem", "400px", "1800px")};
     text-transform: uppercase;
 `;
+
+// Mixin para el contenedor del logo
+export const logoWidthHeight = css`
+    width: ${fluid("100px", "150px", "400px", "1800px")};
+    height: ${fluid("100px", "150px", "400px", "1800px")};
+`;

@@ -32,7 +32,7 @@ const Footer = () => {
         <FooterContainer>
             <MenusLegal>
                 <LogoContainer>
-                    <FooterLogoLink>
+                    <FooterLogoLink href="#">
                         <Logo
                             src={LogoImage}
                             alt="Logotipo de la revista Caras"
@@ -52,34 +52,33 @@ const Footer = () => {
                         </Nav>
                     </Menu>
                 ))}
-
-                <DisclaimerSocial>
-                    <Text>
-                        editorial televisa s.a. de c.v. todos los derechos
-                        reservados. tbg - editorial televisa - entertainment -
-                        news
-                    </Text>
-
-                    <SocialMedia>
-                        {socialLinks.map((link) => {
-                            const Icons = icons[link.name];
-
-                            return (
-                                <LinkIcon
-                                    key={link.name}
-                                    target="_blank"
-                                    aria-label={link.name}
-                                    href={link.href}
-                                >
-                                    <Icon>
-                                        <Icons />
-                                    </Icon>
-                                </LinkIcon>
-                            );
-                        })}
-                    </SocialMedia>
-                </DisclaimerSocial>
             </MenusLegal>
+
+            <DisclaimerSocial>
+                <Text>
+                    editorial televisa s.a. de c.v. todos los derechos
+                    reservados. tbg - editorial televisa - entertainment - news
+                </Text>
+
+                <SocialMedia>
+                    {socialLinks.map((link) => {
+                        const Icons = icons[link.name];
+
+                        return (
+                            <LinkIcon
+                                key={link.name}
+                                target="_blank"
+                                aria-label={link.name}
+                                href={link.href}
+                            >
+                                <Icon>
+                                    <Icons />
+                                </Icon>
+                            </LinkIcon>
+                        );
+                    })}
+                </SocialMedia>
+            </DisclaimerSocial>
         </FooterContainer>
     );
 };
