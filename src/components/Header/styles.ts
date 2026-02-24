@@ -47,23 +47,15 @@ export const Nav = styled.nav`
         color: ${({ theme }) => theme.colors.textMain};
         padding: 0 1em 0 0;
         font-family: ${({ theme }) => theme.fonts.playfair};
+        font-size: ${fluid("0.8rem", "1.1rem", "500px", "1800px")};
 
         &:hover {
             color: ${({ theme }) => theme.colors.linkHover};
         }
 
-        @media (max-width: 50.625em) {
-            font-size: 0.9rem;
-        }
-
         @media (max-width: 46.875em) {
-            font-size: 1rem;
             text-align: center;
             padding: 0;
-        }
-
-        @media (max-width: 29.688em) {
-            font-size: 0.8rem;
         }
     }
 
