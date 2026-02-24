@@ -2,7 +2,6 @@ import styled from "styled-components";
 import {
     fullWidth,
     fluid,
-    paddingStyle,
     logoWidthHeight,
     flexSpaceBetween,
     border,
