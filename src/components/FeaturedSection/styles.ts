@@ -62,16 +62,36 @@ export const Content = styled.div`
     ${heightWidth("100%", "100%")};
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 600px) {
+        flex-direction: column-reverse;
+    }
 `;
 
 export const ColumnRight = styled.div`
     ${heightWidth("100%", "50%")};
     ${columnLayout("flex", "column", "start", "end")}
+
+    @media (max-width: 880px) {
+        width: ${fluid("100px", "330px", "660px", "880px")};
+    }
+
+    @media (max-width: 600px) {
+        ${heightWidth("10%", "100%")};
+    }
 `;
 
 export const ColumnLeft = styled.div`
     ${heightWidth("100%", "50%")};
     ${columnLayout("flex", "column", "center", "center")}
+
+    @media (max-width: 880px) {
+        width: ${fluid("500px", "430px", "660px", "880px")};
+    }
+
+    @media (max-width: 600px) {
+        ${heightWidth("90%", "100%")};
+    }
 `;
 
 export const ColumnLeftInner = styled.div``;

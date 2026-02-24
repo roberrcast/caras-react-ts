@@ -8,6 +8,7 @@ import {
     InputGroup,
     Label,
     Input,
+    SubmitWrapper,
     SubmitButton,
     NamePrompt,
     EmailPrompt,
@@ -79,9 +80,9 @@ const SubscriptionForm: React.FC = () => {
                     </SubmitPrompt>
                 </InputGroup>
 
-                <div>
+                <SubmitWrapper>
                     <SubmitButton type="submit" value="Suscribirse" />
-                </div>
+                </SubmitWrapper>
 
                 <Alert $status={alertStatus} $active={isAlertActive}>
                     <AlertCloseButton onClick={closeAlert}>

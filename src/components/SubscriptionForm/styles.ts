@@ -13,6 +13,7 @@ import {
     newsletterAlertPrompt,
     newsletterAlertHidden,
     newsletterAlertShow,
+    promptPositionMobile,
 } from "../../styles/mixins";
 
 // .newsletter
@@ -31,42 +32,16 @@ export const NewsletterWrapper = styled.section`
 // .newsletter__title
 export const Title = styled.h1`
     font-family: ${({ theme }) => theme.fonts.playfair};
-    ${txtSizeWeight("2.5rem")};
-
-    @media (max-width: 79em) {
-        font-size: 2.4rem;
-    }
-    @media (max-width: 56.5em) {
-        font-size: 2rem;
-    }
-    @media (max-width: 53.125em) {
-        font-size: 1.75rem;
-    }
+    ${txtSizeWeight(fluid("1.75rem", "2.5rem", "500px", "1800px"))};
 `;
 
 // .newsletter__txt
 export const Subtitle = styled.p`
+    text-align: center;
     font-family: ${({ theme }) => theme.fonts.playfair};
-    ${txtSizeWeight("1.5rem")};
+    ${txtSizeWeight(fluid("1rem", "1.5rem", "500px", "1800px"))};
     color: ${({ theme }) => theme.colors.primary};
     padding: 0.5rem;
-
-    @media (max-width: 79em) {
-        font-size: 1.35rem;
-    }
-    @media (max-width: 56.5em) {
-        font-size: 1.25rem;
-    }
-    @media (max-width: 53.125em) {
-        font-size: 1.15rem;
-    }
-    @media (max-width: 50.625em) {
-        text-align: center;
-        line-height: 2rem;
-    }
-    @media (max-width: 29.688em) {
-        font-size: 1rem;
-    }
 `;
 
 // .newsletter__form
@@ -78,7 +53,12 @@ export const Form = styled.form`
     gap: 1rem;
     width: 100%;
 
-    @media (max-width: 25em) {
+    @media (max-width: 560px) {
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    @media (max-width: 400px) {
         margin: 0.5rem;
     }
 `;
@@ -89,23 +69,19 @@ export const InputGroup = styled.div`
     align-items: center;
     gap: 3px;
     position: relative;
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }
 `;
 
 // .newsletter__label
 export const Label = styled.label`
-
-@media (max-width: 53.125em) {
-    font-size: 0.95rem;
-    }
-
-    @media (max-width: 46.875em) {
-    font-size: 0.8rem;
-    }
+    font-size: ${fluid(".76rem", "1rem", "400px", "1800px")};
 
     @media (max-width: 25em) {
-    font-size: 0.76rem;
-   margin-left: 55px;
-   
+        margin-left: 0;
+    }
 `;
 
 // .newsletter__input
@@ -129,25 +105,22 @@ export const Input = styled.input`
     }
 `;
 
+export const SubmitWrapper = styled.div`
+    @media (max-width: 560px) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+`;
+
 // .newsletter__submit
 export const SubmitButton = styled(Input).attrs({ type: "submit" })`
     font-family: ${({ theme }) => theme.fonts.barlowBold};
-    font-size: 1.2rem;
+    font-size: ${fluid(".8rem", "1.2rem", "500px", "1800px")};
     text-transform: uppercase;
     background-color: ${({ theme }) => theme.colors.bgWhite};
     ${({ theme }) => hover(theme.colors.primary)};
     width: auto;
-
-    @media (max-width: 53.125em) {
-        font-size: 0.99rem;
-    }
-    @media (max-width: 46.875em) {
-        font-size: 0.85rem;
-        width: 100px;
-    }
-    @media (max-width: 29.688em) {
-        font-size: 0.9rem;
-    }
 `;
 
 // Estilos base para todos los pop-ups de los prompts
@@ -170,6 +143,7 @@ export const NamePrompt = styled(PromptBase)`
         )}
     ${inputPromptPosition};
     font-size: ${fluid("10.4px", "18px", "400px", "1800px")};
+    ${promptPositionMobile("500px")};
 `;
 
 // .newsletter__email-prompt y sus variaciones
@@ -189,6 +163,7 @@ export const EmailPrompt = styled(PromptBase)<{
         )}
     ${inputPromptPosition};
     font-size: ${fluid("10.4px", "18px", "400px", "1800px")};
+    ${promptPositionMobile("500px")};
 `;
 
 // .newsletter__email-submit
@@ -202,6 +177,7 @@ export const SubmitPrompt = styled(PromptBase)`
         )}
     ${inputPromptPosition};
     font-size: ${fluid("10.4px", "18px", "400px", "1800px")};
+    ${promptPositionMobile("500px")};
 `;
 
 // .newsletter__alert
@@ -228,9 +204,9 @@ export const Alert = styled.div<{
 
 ${({ $active }) => $active && newsletterAlertShow};
 
-    @media (max-width: 25em) {
+    @media (max-width: 500px) {
         width: 80%;
-        margin: 0 10%;
+        margin: -50% auto;
     }
 `;
 
