@@ -206,7 +206,7 @@ ${({ $active }) => $active && newsletterAlertShow};
 
     @media (max-width: 500px) {
         width: 80%;
-        margin: -50% auto;
+        margin: 50% auto;
     }
 `;
 
