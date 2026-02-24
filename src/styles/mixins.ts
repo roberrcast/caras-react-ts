@@ -131,12 +131,16 @@ export const prompt = (
 `;
 
 export const inputPromptPosition = css`
-    /* left: 100%; */
-    left: calc(100% + 10px);
+    left: calc(100% + 1px);
     top: 50%;
-    /* transform: translate(10px, -50%); */
-
     white-space: nowrap;
+`;
+
+export const promptPositionMobile = (value: string) => css`
+    @media (max-width: ${value}) {
+        left: calc(30% + 0px);
+        top: 125%;
+    }
 `;
 
 //Mixins de animación/Prompts

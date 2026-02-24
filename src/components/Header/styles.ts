@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { fullWidth, flexCenter, flexColumnCenter } from "../../styles/mixins";
+import {
+    fullWidth,
+    flexCenter,
+    flexColumnCenter,
+    fluid,
+} from "../../styles/mixins";
 
 export const HeaderWrapper = styled.header`
     ${flexColumnCenter};
@@ -13,17 +18,7 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const LogoWrapper = styled.section`
-    width: 230px;
-
-    @media (max-width: 53.125em) {
-        width: 195px;
-    }
-    @media (max-width: 36.25em) {
-        width: 30%;
-    }
-    @media (max-width: 29.688em) {
-        width: 35%;
-    }
+    width: ${fluid("125px", "230px", "450px", "1800px")};
 `;
 
 //Antes header__home (the <a> tag)

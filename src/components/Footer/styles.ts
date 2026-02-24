@@ -10,7 +10,7 @@ import {
 
 export const FooterContainer = styled.footer`
     ${fullWidth};
-    ${paddingStyle};
+    padding: 1.75rem ${fluid("1rem", "8rem", "400px", "1800px")};
     background-color: ${({ theme }) => theme.colors.footerBg};
 `;
 
@@ -21,6 +21,11 @@ export const MenusLegal = styled.div`
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: ${fluid("5rem", "10rem", "400px", "1800px")};
+
+    @media (max-width: 450px) {
+        justify-content: center;
+        gap: 6rem;
+    }
 `;
 
 // Antes .footer__logo-container
@@ -81,7 +86,7 @@ export const Text = styled.p`
     opacity: 0.8;
     font-size: ${fluid(".75rem", ".9rem", "400px", "1800px")};
 
-    @media (max-width: 430px) {
+    @media (max-width: 600px) {
         text-align: center;
     }
 `;
