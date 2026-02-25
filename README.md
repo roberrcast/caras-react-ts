@@ -1,5 +1,7 @@
 1 # Caras Landing Page
-    2
+    
+    
+2
     3 A sleek and high-performance magazine landing page inspired by the "Caras" lifestyle brand. This project serves as a robust prototype for a media-focused web
       application, featuring satirical news content and a refined editorial aesthetic.
     4
