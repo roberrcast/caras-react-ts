@@ -1,3 +1,4 @@
+import { validateName, validateEmail } from "../utils/validators";
 import { useState, useEffect, useRef } from "react";
 type UseSubscriptionFormReturn = {
     name: string;
@@ -19,18 +20,18 @@ type UseSubscriptionFormReturn = {
 };
 
 export const useSubscriptionForm = (): UseSubscriptionFormReturn => {
-    // --- Manejo de los estados ---
+    /* --- Manejo de los estados --- */
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
 
-    // Estados de validación de los prompts del email
+    /* --- Estados de validación de los prompts del email --- */
     const [emailStatus, setEmailStatus] = useState<"success" | "error" | null>(
         null,
     );
     const [emailMessage, setEmailMessage] = useState("");
     const [isEmailPromptActive, setIsEmailPromptActive] = useState(false);
 
-    // Estado modal principal de alerta
+    /* --- Estado modal principal de alerta --- */
     const [alertStatus, setAlertStatus] = useState<"success" | "error" | "">(
         "",
     );
@@ -38,15 +39,15 @@ export const useSubscriptionForm = (): UseSubscriptionFormReturn => {
     const [alertMessage1, setAlertMessage1] = useState("");
     const [alertMessage2, setAlertMessage2] = useState("");
 
-    // Estados para la validación del submit (name y email)
+    /* --- Estados para la validación del submit (name y email) --- */
     const [isNamePromptActive, setIsNamePromptActive] = useState(false);
     const [isSubmitPromptActive, setIsSubmitPromptActive] = useState(false);
     const [submitPromptMessage, setSubmitPromptMessage] = useState("");
 
-    // useRef para manejar el debounce timer
+    /* --- useRef para manejar el debounce timer --- */
     const debounceTimer = useRef<NodeJS.Timeout | null>(null);
 
-    // -- handlers de los input ---
+    /* --- handlers de los input --- */
     const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value);
     };
@@ -55,7 +56,7 @@ export const useSubscriptionForm = (): UseSubscriptionFormReturn => {
         setEmail(e.target.value);
     };
 
-    // --- Efectos validación email ---
+    /* --- Efectos validación email --- */
     useEffect(() => {
         if (debounceTimer.current) clearTimeout(debounceTimer.current);
 
@@ -66,19 +67,17 @@ export const useSubscriptionForm = (): UseSubscriptionFormReturn => {
         }
 
         debounceTimer.current = setTimeout(() => {
-            const emailValidation =
-                /^[a-zA-Z0-9._%+;,-]+@[a-zA-z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const error = validateEmail(email);
 
-            if (emailValidation.test(email)) {
+            if (!error) {
                 setEmailStatus("success");
                 setEmailMessage("Email válido");
             } else {
                 setEmailStatus("error");
-                setEmailMessage("e-mail no válido");
+                setEmailMessage(error || "e-mail no válido");
             }
 
             setIsEmailPromptActive(true);
-
             setTimeout(() => setIsEmailPromptActive(false), 3000);
         }, 500);
 
@@ -87,22 +86,15 @@ export const useSubscriptionForm = (): UseSubscriptionFormReturn => {
         };
     }, [email]);
 
-    // --- handler para el submit del formulario ---
+    /* --- handler para el submit del formulario --- */
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        const nameError = name.trim() === "" ? "Agregue su nombre" : null;
-        const emailError = (() => {
-            if (email.trim() === "") return "Ingrese un email";
-            if (
-                !/^[a-zA-Z0-9._%+;,-]+@[a-zA-z0-9.-]+\.[a-zA-Z]{2,}$/.test(
-                    email,
-                )
-            )
-                return "Ingrese un email válido";
-            return null;
-        })();
+        // 1. Use the clean validators
+        const nameError = validateName(name);
+        const emailError = validateEmail(email);
 
+        // 2. Clear previous alerts
         setIsAlertActive(false);
         setIsNamePromptActive(false);
         setIsSubmitPromptActive(false);
@@ -119,12 +111,13 @@ export const useSubscriptionForm = (): UseSubscriptionFormReturn => {
                 setSubmitPromptMessage(emailError);
             }
 
+            // 3. Show specific errors in the alert
             if (nameError && emailError) {
-                setAlertMessage1(
-                    "Por favor ingrese su nombre y correo electrónico",
-                );
+                setAlertMessage1(nameError);
+                setAlertMessage2(emailError);
             } else {
                 setAlertMessage1(nameError || emailError || "");
+                setAlertMessage2("");
             }
 
             setTimeout(() => {
@@ -135,6 +128,7 @@ export const useSubscriptionForm = (): UseSubscriptionFormReturn => {
             setAlertStatus("success");
             setIsAlertActive(true);
             setAlertMessage1("Suscripción añadida con éxito!");
+            setAlertMessage2("");
             setName("");
             setEmail("");
         }

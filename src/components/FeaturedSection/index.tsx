@@ -38,7 +38,14 @@ const FeaturedSection = () => {
             <Title>Nuestros suscriptores disfrutan de mucho más...</Title>
 
             <FeaturedSectionInner>
-                <BackgroundVideo ref={videoRef} autoPlay muted loop playsInline>
+                <BackgroundVideo
+                    ref={videoRef}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    aria-label="Video de fondo con joven posando para la cámara"
+                >
                     <source src={heroVideo} type="video/mp4" />
                     <source src={heroVideoWebm} type="video/webm" />
                     Su navegador es incompatible con la etiqueta de video.
