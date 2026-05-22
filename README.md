@@ -3,7 +3,6 @@ Caras Landing Page
   media-focused web application, featuring satirical news content and a refined editorial aesthetic.
 
   [![Netlify Status](https://api.netlify.com/api/v1/badges/780f8edf-3e15-4e7e-b020-116ee68203d7/deploy-status)](https://caras-landing-ts.netlify.app/)
-  eploys)
 
 
   🚀 Key Features
