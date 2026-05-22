@@ -39,7 +39,11 @@ const Header: React.FC<HeaderProps> = ({ logoSrc }) => {
       <Menu>
         <Nav>
           {navLinks.map((link) => (
-            <a key={link} href={`#${link.toLowerCase()}`}>
+            <a
+              key={link}
+              href={`#${link.toLowerCase()}`}
+              aria-label={`${link}. Ir a esta sección.`}
+            >
               {link}
             </a>
           ))}
@@ -49,23 +53,23 @@ const Header: React.FC<HeaderProps> = ({ logoSrc }) => {
           <IconLink
             href="https://www.facebook.com/Revista.Caras"
             target="_blank"
-            aria-label="Facebook"
+            aria-label="Ir a la página oficial de Caras en Facebook"
           >
-            <Facebook size={20} />
+            <Facebook size={20} aria-hidden="true" />
           </IconLink>
           <IconLink
             href="https://www.instagram.com/carasmexico/"
             target="_blank"
-            aria-label="Instagram"
+            aria-label="Ir a la página oficial de Caras en Instagram"
           >
-            <Instagram size={20} />
+            <Instagram size={20} aria-hidden="true" />
           </IconLink>
           <IconLink
             href="https://x.com/carasmexico"
             target="_blank"
-            aria-label="Twitter"
+            aria-label="Ir a la página oficial de Caras en Twitter"
           >
-            <Twitter size={20} />
+            <Twitter size={20} aria-hidden="true" />
           </IconLink>
           <IconWrapper arial-label="Buscar">
             <Search size={20} />
