@@ -2,9 +2,9 @@ Caras Landing Page
   A sleek and high-performance magazine landing page inspired by the "Caras" lifestyle brand. This project serves as a robust prototype for a
   media-focused web application, featuring satirical news content and a refined editorial aesthetic.
 
-  ![Netlify Status
-  (https://api.netlify.com/api/v1/badges/780f8edf-3e15-4e7e-b020-116ee68203d7/deploy-status)](https://app.netlify.com/projects/caras-landing-ts/d
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/780f8edf-3e15-4e7e-b020-116ee68203d7/deploy-status)](https://caras-landing-ts.netlify.app/)
   eploys)
+
 
   🚀 Key Features
    - Modern Tech Stack: Built with React 19 and TypeScript for maximum reliability and performance.
