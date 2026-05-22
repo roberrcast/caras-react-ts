@@ -53,8 +53,10 @@ const SubscriptionForm: React.FC = () => {
             required
             value={name}
             onChange={handleNameChange}
+            aria-invalid={isNamePromptActive}
+            aria-describedby="name-error"
           />
-          <NamePrompt $active={isNamePromptActive}>
+          <NamePrompt $active={isNamePromptActive} id="name-error">
             Por favor llene este campo
           </NamePrompt>
         </InputGroup>
@@ -68,14 +70,17 @@ const SubscriptionForm: React.FC = () => {
             required
             value={email}
             onChange={handleEmailChange}
+            aria-invalid={isEmailPromptActive || isSubmitPromptActive}
+            aria-describedby="email-error"
           />
           <EmailPrompt
             $status={emailStatus ?? undefined}
             $active={isEmailPromptActive}
+            id="email-error"
           >
             {emailMessage}
           </EmailPrompt>
-          <SubmitPrompt $active={isSubmitPromptActive}>
+          <SubmitPrompt $active={isSubmitPromptActive} id="submit-error">
             {submitPromptMessage}
           </SubmitPrompt>
         </InputGroup>
