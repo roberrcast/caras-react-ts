@@ -5,6 +5,7 @@ import {
     footerStyle,
     paddingStyle,
     layoutBreakpoint,
+    txtSizeWeight,
 } from "../../styles/mixins";
 
 export const HeadlinesContainer = styled.section`
@@ -14,6 +15,12 @@ export const HeadlinesContainer = styled.section`
 
 export const HeadlinesContainerInner = styled.div`
     ${layoutBreakpoint};
+`;
+
+export const SectionTitle = styled.h3`
+    ${txtSizeWeight(fluid("1.3rem", "2rem", "475px", "1800px"))};
+    text-align: center;
+    margin: 0 0 4rem;
 `;
 
 export const HeadlinesCard = styled.article``;
