@@ -11,21 +11,21 @@ import Headlines from "./components/Headlines";
 import Footer from "./components/Footer";
 
 function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <div className="App">
-        <Header logoSrc={logo} />
-        <main>
-          <SubscriptionForm />
-          <FeaturedSection />
-          <CommentSection />
-          <Headlines />
-        </main>
-        <Footer />
-      </div>
-    </ThemeProvider>
-  );
+    return (
+        <ThemeProvider theme={theme}>
+            <GlobalStyles />
+            <div className="App">
+                <Header logoSrc={logo} />
+                <main>
+                    <SubscriptionForm />
+                    <FeaturedSection />
+                    <CommentSection />
+                    <Headlines />
+                </main>
+                <Footer />
+            </div>
+        </ThemeProvider>
+    );
 }
 
 export default App;

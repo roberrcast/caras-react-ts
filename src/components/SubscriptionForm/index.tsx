@@ -17,6 +17,7 @@ import {
     AlertCloseButton,
     CloseIcon,
     AlertText,
+    Divider,
 } from "./styles";
 
 const SubscriptionForm: React.FC = () => {
@@ -38,10 +39,15 @@ const SubscriptionForm: React.FC = () => {
         isSubmitPromptActive,
         submitPromptMessage,
     } = useSubscriptionForm();
+
     return (
         <NewsletterWrapper>
             <Title>Newsletter</Title>
-            <Subtitle>Espectáculos, Actualidad, Moda y Cultura</Subtitle>
+            <Divider />
+            <Subtitle>
+                Lo mejor del mundo del espectáculo, moda y cultura directamente
+                en tu bandeja de entrada
+            </Subtitle>
 
             <Form noValidate onSubmit={handleSubmit}>
                 <InputGroup>
@@ -91,7 +97,10 @@ const SubscriptionForm: React.FC = () => {
                 </InputGroup>
 
                 <SubmitWrapper>
-                    <SubmitButton type="submit" value="Suscribirse" />
+                    <SubmitButton
+                        type="submit"
+                        value="Recibir Contenido Exclusivo"
+                    />
                 </SubmitWrapper>
 
                 <Alert

@@ -108,10 +108,16 @@ export const aspectRatio = css`
 `;
 
 //Hover
-export const hover = (color: string) => css`
+export const hover = (
+    color: string,
+    background?: string,
+    border?: string,
+) => css`
     @media (hover: hover) {
         &:hover {
             color: ${color};
+            background-color: ${background};
+            border: 1px solid ${border};
             cursor: pointer;
         }
     }

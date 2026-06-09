@@ -26,15 +26,15 @@ const FeaturedSection = () => {
     const { isPlaying, videoRef, togglePlay } = useVideoPlayer();
 
     const featuredData = [
-        { span: "Entérate", text: "de lo último de la moda" },
-        { span: "Descubre", text: "culturas y arte" },
-        { span: "Infórmate", text: "de lo que sucede en el mundo" },
-        { span: "Conoce", text: "las novedades del entretenimiento" },
+        { span: "Inspírate", text: "con la alta costura" },
+        { span: "Sumérgete", text: "en el arte y cultura" },
+        { span: "Conecta", text: "con la actualidad" },
+        { span: "Explora", text: "el espectáculo" },
     ];
 
     return (
         <FeaturedSectionContainer>
-            <Title>Nuestros suscriptores disfrutan de mucho más...</Title>
+            <Title>Forma parte del círculo que define las tendencias</Title>
 
             <FeaturedSectionInner>
                 <BackgroundVideo
