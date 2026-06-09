@@ -1,7 +1,7 @@
-import headlinesImg1 from "../assets/trump.jpg";
-import headlinesImg2 from "../assets/david.jpg";
-import headlinesImg3 from "../assets/bruno.png";
-import headlinesImg4 from "../assets/coachella.png";
+import headlinesImg1 from "../assets/trump.webp";
+import headlinesImg2 from "../assets/david.webp";
+import headlinesImg3 from "../assets/bruno.webp";
+import headlinesImg4 from "../assets/coachella.webp";
 
 export type HeadlinesData = {
     id: number;
