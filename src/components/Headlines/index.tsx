@@ -29,7 +29,7 @@ const Headlines = () => {
                             tabIndex={-1}
                             aria-hidden="true"
                         >
-                            <Image src={item.image} alt="" />
+                            <Image src={item.image} alt="" loading="lazy" />
                         </HeadlinesImageLink>
 
                         <Content>

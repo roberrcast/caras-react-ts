@@ -36,6 +36,7 @@ export const FooterLogoLink = styled.a``;
 
 export const Logo = styled.img`
     width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
 `;
 
 export const Menu = styled.section`
@@ -44,8 +45,10 @@ export const Menu = styled.section`
 `;
 
 export const Title = styled.h4`
+    font-family: ${({ theme }) => theme.fonts.barlowBold};
+    color: ${({ theme }) => theme.colors.footerText};
     font-weight: 700;
-    font-size: ${fluid(".95rem", "1rem", "400px", "1800px")};
+    font-size: ${fluid("1rem", "1.2rem", "400px", "1800px")};
     margin: 0 0 1rem 0;
 `;
 
@@ -56,8 +59,9 @@ export const Nav = styled.nav`
 `;
 
 export const Link = styled.a`
+    font-family: ${({ theme }) => theme.fonts.barlowLight};
     color: ${({ theme }) => theme.colors.footerText};
-    font-size: ${fluid(".95rem", "1rem", "400px", "1800px")};
+    font-size: ${fluid(".95rem", "1.1rem", "400px", "1800px")};
 
     @media (hover: hover) {
         &:hover {
@@ -82,6 +86,7 @@ export const DisclaimerSocial = styled.div`
 `;
 
 export const Text = styled.p`
+    font-family: ${({ theme }) => theme.fonts.barlowLight};
     opacity: 0.8;
     font-size: ${fluid(".75rem", ".9rem", "400px", "1800px")};
 

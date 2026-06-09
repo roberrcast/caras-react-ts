@@ -50,6 +50,7 @@ export const Subtitle = styled.p`
     ${txtSizeWeight(fluid("1rem", "1.5rem", "500px", "1800px"))};
     color: ${({ theme }) => theme.colors.primary};
     padding: 0.5rem;
+    letter-spacing: 0.05em;
 `;
 
 // .newsletter__form

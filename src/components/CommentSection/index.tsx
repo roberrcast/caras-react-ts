@@ -20,6 +20,7 @@ const CommentSection = () => {
                         <CommentsCard key={id}>
                             <Image
                                 src={user.userImage}
+                                loading="lazy"
                                 alt={`Foto de perfil de ${user.username}`}
                             />
 
