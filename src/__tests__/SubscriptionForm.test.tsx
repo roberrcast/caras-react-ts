@@ -18,8 +18,11 @@ describe("SubscriptionForm component", () => {
         expect(
             screen.getByLabelText(/correo electrónico/i),
         ).toBeInTheDocument();
+
         expect(
-            screen.getByRole("button", { name: /suscribirse/i }),
+            screen.getByRole("button", {
+                name: /recibir contenido exclusivo/i,
+            }),
         ).toBeInTheDocument();
     });
 
@@ -29,7 +32,7 @@ describe("SubscriptionForm component", () => {
         const nameInput = screen.getByLabelText(/nombre/i);
         const emailInput = screen.getByLabelText(/correo electrónico/i);
         const submitButton = screen.getByRole("button", {
-            name: /suscribirse/i,
+            name: /recibir contenido exclusivo/i,
         });
 
         // Llenar los inputs
@@ -55,7 +58,11 @@ describe("SubscriptionForm component", () => {
         fireEvent.change(emailInput, { target: { value: "123@mail.com" } });
 
         // Hacer submit
-        fireEvent.click(screen.getByRole("button", { name: /suscribirse/i }));
+        fireEvent.click(
+            screen.getByRole("button", {
+                name: /recibir contenido exclusivo/i,
+            }),
+        );
 
         expect(screen.getByText(/agregue su nombre/i)).toBeInTheDocument();
     });
@@ -69,7 +76,11 @@ describe("SubscriptionForm component", () => {
         fireEvent.change(nameInput, { target: { value: "Juan" } });
         fireEvent.change(emailInput, { target: { value: "" } });
 
-        fireEvent.click(screen.getByRole("button", { name: /suscribirse/i }));
+        fireEvent.click(
+            screen.getByRole("button", {
+                name: /recibir contenido exclusivo/i,
+            }),
+        );
 
         expect(screen.getAllByText(/ingrese un email/i)).toHaveLength(2);
     });
@@ -84,7 +95,11 @@ describe("SubscriptionForm component", () => {
         });
 
         // Click del button
-        fireEvent.click(screen.getByRole("button", { name: /suscribirse/i }));
+        fireEvent.click(
+            screen.getByRole("button", {
+                name: /recibir contenido exclusivo/i,
+            }),
+        );
 
         const emailErrors = screen.getAllByText(/agregue su nombre/i);
         expect(emailErrors.length).toBeGreaterThan(0);

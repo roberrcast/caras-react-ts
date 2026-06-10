@@ -100,7 +100,7 @@ export const ColumnLeftInner = styled.div``;
 export const Text = styled.p`
     text-align: justify;
     font-size: ${fluid(".9rem", "1.5rem", "375px", "1800px")};
-    //padding: 1.5rem;
+    letter-spacing: 0.2em;
     padding: ${fluid(".8rem", "1.5rem", "375px", "1800px")};
     z-index: 1;
     color: ${({ theme }) => theme.colors.bgSecondary};

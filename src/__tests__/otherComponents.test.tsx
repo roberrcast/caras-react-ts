@@ -30,14 +30,16 @@ describe("Secondary components", () => {
 
         expect(profileImgs).toHaveLength(4);
 
-        expect(screen.getByText(/suscriptores/i)).toBeInTheDocument();
+        expect(screen.getByText(/comunidad/i)).toBeInTheDocument();
     });
 
     it("renders FeaturedSection", () => {
         const { container } = renderWithTheme(<FeaturedSection />);
 
         // Title
-        expect(screen.getByText(/nuestros suscriptores/i)).toBeInTheDocument();
+        expect(
+            screen.getByText(/forma parte del círculo/i),
+        ).toBeInTheDocument();
 
         // Video de fondo
         const video = container.querySelector("video");

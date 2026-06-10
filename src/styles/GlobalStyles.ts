@@ -33,6 +33,10 @@ body {
     color: ${(props) => props.theme.colors.textMain};
     background-color: ${(props) => props.theme.colors.bgWhite};
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 a {

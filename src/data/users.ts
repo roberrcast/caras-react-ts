@@ -1,7 +1,7 @@
-import userImg1 from "../assets/testimonial1.jpg";
-import userImg2 from "../assets/testimonial2.jpg";
-import userImg3 from "../assets/testimonial3.jpg";
-import userImg4 from "../assets/guy.jpg";
+import userImg1 from "../assets/testimonial1.webp";
+import userImg2 from "../assets/testimonial2.webp";
+import userImg3 from "../assets/testimonial3.webp";
+import userImg4 from "../assets/guy.webp";
 
 export type User = {
     id: number;
